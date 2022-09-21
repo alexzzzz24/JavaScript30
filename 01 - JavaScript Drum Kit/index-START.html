@@ -58,9 +58,36 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  //event listener , means press key for this exercise,after press the key , it will play the sound
+window.addEventListener('keydown',playSound);
+
+function playSound(e){
+  //need two functions, 1st playSound
+    const audio=document.querySelector(`audio[data-key="${e.keyCode}"]`); //if key pressed it will linked to the audio file
+    if(!audio) return; //stop the function from running all together
+    audio.play(); //play the audio osund
+    audio.currentTime=0;// rewind the key and play again from the beginning
+
+    //call the key
+    const key= document.querySelector(`.key[data-key="${e.keyCode}"]`); //use .key because we use class, we could use div, then no need to use '.'
+    
+    key.classList.add('playing'); // add playing style to the key after pressed
+};
+
+function removeTransition(e){
+  if(e.propertyName !== 'transform') return;
+  this.classList.remove('playing');  // remove the border
+
+}
+
+
+const keys=document.querySelectorAll('.key');// select all the keys bcuz we want to listen to every key
+keys.forEach(key =>key.addEventListener('transitionend', removeTransition));
+// each key after transitionend perfomr removeTransition function
+
+
 
 </script>
-
 
 </body>
 </html>

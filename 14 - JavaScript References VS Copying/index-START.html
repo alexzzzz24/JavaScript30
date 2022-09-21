@@ -25,6 +25,16 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
+    let team=players.slice(); //this make a copy but dont replace
+    let team1=[].concat(players); //does the same thing
+    let team2=[...players]
+    let team3=Array.from(players)
+    team[3]= 'lux'
+    console.log(team)
+    console.log(players)
+    console.log(team1)
+    console.log(team2)
+    console.log(team3)
 
     // one way
 
@@ -41,6 +51,10 @@
       name: 'Wes Bos',
       age: 80
     };
+
+    const cap= Object.assign({},person,{number: 99, age: 12});
+    console.log(person)
+    console.log(cap)
 
     // and think we make a copy:
 

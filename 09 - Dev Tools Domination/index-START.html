@@ -18,27 +18,43 @@
     }
 
     // Regular
-
+    console.log('hello')
     // Interpolated
-
+    let hi=1;
+    console.log(`hello you are ${hi}`)
     // Styled
+    console.log('%c hello you are sb' ,'text-shadow: 10px 10px red; font-size:50px;  background:green;')
 
     // warning!
+    console.warn('hello')
 
     // Error :|
+    console.error('shit')
 
     // Info
+    console.info('people shit everyday')
 
     // Testing
+    const p=document.querySelector('p');
+    //false then shows
+    console.assert(p.classList.contains('ouch'),'That is wrong!')
+
+    //true then no shows
+    console.assert(1==1,'that is right')
 
     // clearing
-
+    //-------console.clear()
     // Viewing DOM Elements
-
+  console.dir(p)
     // Grouping together
-
+    dogs.forEach(dog=>{
+      console.log(`This is ${dog.name}, is ${dog.age}`)
+    })
     // counting
-
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
     // timing
 
   </script>
